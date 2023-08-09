@@ -41,7 +41,9 @@ const App = (props) => {
   };
 
   const addToFavorites = (movie) => {
-    setFavoriteMovies([...favoriteMovies, movie]);
+    const favMovie = movies.find((mov) => mov.id === movie);
+    if (!favoriteMovies.find((mov) => mov.id === movie))
+      setFavoriteMovies([...favoriteMovies, favMovie]);
   };
 
   return (
