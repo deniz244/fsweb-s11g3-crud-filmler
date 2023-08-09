@@ -4,7 +4,7 @@ import { Link, useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Movie = (props) => {
-  const { addToFavorites } = props;
+  const { addToFavorites, deleteMovie } = props;
 
   const [movie, setMovie] = useState("");
 
@@ -21,17 +21,6 @@ const Movie = (props) => {
         console.log(err.response);
       });
   }, [id]);
-
-  const deleteMovie = (id) => {
-    axios
-      .delete(`http://localhost:9000/api/movies/${id}`)
-      .then((res) => {
-        push("/movies");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   return (
     <div className="bg-white rounded-md shadow flex-1">
