@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-const AddMovieForm = () => {
+const AddMovieForm = (props) => {
   const { push } = useHistory();
+
+  const { setMovies } = props;
 
   const [movie, setMovie] = useState({
     title: "",
@@ -26,7 +28,7 @@ const AddMovieForm = () => {
     axios
       .post("http://localhost:9000/api/movies", movie)
       .then((res) => {
-        console.log("Veri başarıyla eklendi.");
+        setMovies(res.data);
         push(`/movies/`);
       })
       .catch((err) => {
