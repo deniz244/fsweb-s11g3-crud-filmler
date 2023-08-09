@@ -40,6 +40,7 @@ const App = (props) => {
       });
   };
 
+  //find
   const addToFavorites = (movie) => {
     const favMovie = movies.find((mov) => mov.id === movie);
     if (!favoriteMovies.find((mov) => mov.id === movie))
