@@ -111,7 +111,7 @@ const EditMovieForm = (props) => {
             type="submit"
             className="myButton bg-green-700 hover:bg-green-600"
           >
-            Ekle
+            Düzenle
           </button>
         </div>
       </form>
